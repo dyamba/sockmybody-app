@@ -1,1 +1,168 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import 'assets/scss/variables';
+@import 'assets/scss/mixins';
+@import 'assets/scss/animations';
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $dark;
+  background-color: $light;
+  overflow-x: hidden;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  //padding: $spacing-xl 0;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+/* Global components */
+.btn {
+  @include chic-button;
+}
+
+.card {
+  @include chic-card;
+}
+
+.product-item {
+  @include product-card;
+}
+
+.section-title {
+  @include section-heading;
+}
+
+/* Utility classes */
+.bg-light {
+  background: $light-gradient;
+}
+
+.bg-primary {
+  background: $primary-gradient;
+  color: $white;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: $spacing-xs !important; }
+.mb-2 { margin-bottom: $spacing-sm !important; }
+.mb-3 { margin-bottom: $spacing-md !important; }
+.mb-4 { margin-bottom: $spacing-lg !important; }
+.mb-5 { margin-bottom: $spacing-xl !important; }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: $spacing-xs !important; }
+.mt-2 { margin-top: $spacing-sm !important; }
+.mt-3 { margin-top: $spacing-md !important; }
+.mt-4 { margin-top: $spacing-lg !important; }
+.mt-5 { margin-top: $spacing-xl !important; }
+
+.hidden {
+  display: none !important;
+}
+
+/* Animation classes */
+.fade-in-up {
+  @include fade-in-up;
+}
+
+/* Responsive layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$spacing-md;
+  margin-left: -$spacing-md;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-right: $spacing-md;
+  padding-left: $spacing-md;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  section {
+    padding: $spacing-lg 0;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+  }
+}
+
+// Handle animations based on visibility
+.animate-on-scroll {
+  opacity: 0.9;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

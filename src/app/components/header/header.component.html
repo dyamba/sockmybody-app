@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/images/logo.png" alt="SockMyBody Logo">
+        <span>SockMyBody</span>
+      </a>
+    </div>
+
+    <nav class="nav-menu" [class.active]="isMenuActive">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">Shop</a></li>
+        <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+        <li><a routerLink="/account" routerLinkActive="active">Account</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="action-btn search-btn" aria-label="Search">
+        <i class="icon">🔍</i>
+      </button>
+
+      <a routerLink="/account" class="action-btn account-btn" aria-label="My Account">
+        <i class="icon">👤</i>
+      </a>
+
+      <a routerLink="/cart" class="action-btn cart-btn" aria-label="Shopping Cart">
+        <i class="icon">🛒</i>
+        <span class="badge">3</span>
+      </a>
+
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuActive" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,149 @@
+<div class="home-page parallax-container">
+  <app-hero></app-hero>
+
+  <section class="features-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="tag animate-on-scroll">Features</span>
+        <h2 class="animate-on-scroll">Why Choose SockMyBody</h2>
+        <div class="accent-line animate-on-scroll"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon parallax-element-slow">
+            <i class="icon">✨</i>
+          </div>
+          <h3>Premium Quality</h3>
+          <p>Crafted with the finest materials for ultimate comfort and durability.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll delay-100">
+          <div class="feature-icon parallax-element-medium">
+            <i class="icon">🎨</i>
+          </div>
+          <h3>Unique Designs</h3>
+          <p>Express your personality with our exclusive patterns and colors.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll delay-200">
+          <div class="feature-icon parallax-element-slow">
+            <i class="icon">♻️</i>
+          </div>
+          <h3>Eco-Friendly</h3>
+          <p>Sustainable production methods and materials that respect our planet.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll delay-300">
+          <div class="feature-icon parallax-element-fast">
+            <i class="icon">💝</i>
+          </div>
+          <h3>Perfect Gift</h3>
+          <p>Surprise your loved ones with the perfect meaningful gift they'll adore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-accent parallax-element-medium">
+      <div class="accent-shape shape-1"></div>
+      <div class="accent-shape shape-2"></div>
+      <div class="accent-shape shape-3"></div>
+    </div>
+  </section>
+
+  <app-gallery></app-gallery>
+
+  <section class="trending-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="tag animate-on-scroll">Trending Now</span>
+        <h2 class="animate-on-scroll">Our Popular Collections</h2>
+        <div class="accent-line animate-on-scroll"></div>
+      </div>
+
+      <div class="products-grid">
+        <div *ngFor="let product of trendingProducts; let i = index" class="product-item animate-on-scroll" [ngClass]="'delay-' + (i * 100 % 500)">
+          <app-product-card
+            [product]="product"
+            [animateOnScroll]="false"
+            (quickView)="openQuickView($event)"
+            (cartAdd)="addToCart($event)"
+            (wishlistAdd)="addToWishlist($event)">
+          </app-product-card>
+        </div>
+      </div>
+
+      <div class="view-all-container animate-on-scroll">
+        <a routerLink="/products" class="view-all-btn">View All Products</a>
+      </div>
+    </div>
+
+    <div class="parallax-accent">
+      <div class="parallax-element-slow accent-circle circle-1"></div>
+      <div class="parallax-element-medium accent-circle circle-2"></div>
+      <div class="parallax-element-fast accent-circle circle-3"></div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="tag animate-on-scroll">Testimonials</span>
+        <h2 class="animate-on-scroll">What Our Customers Say</h2>
+        <div class="accent-line animate-on-scroll"></div>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-content">
+            <div class="quote-icon parallax-element-slow">❝</div>
+            <p>"The most comfortable socks I've ever worn! The designs are fabulous and they make perfect gifts."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+            </div>
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-on-scroll delay-200">
+          <div class="testimonial-content">
+            <div class="quote-icon parallax-element-medium">❝</div>
+            <p>"SockMyBody socks last forever. I've had mine for over a year and they still look brand new!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Chen">
+            </div>
+            <div class="author-info">
+              <h4>David Chen</h4>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-on-scroll delay-400">
+          <div class="testimonial-content">
+            <div class="quote-icon parallax-element-fast">❝</div>
+            <p>"The quality and craftsmanship is exceptional. These socks are worth every penny!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+            </div>
+            <div class="author-info">
+              <h4>Emily Rodriguez</h4>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-cta></app-cta>
+</div>

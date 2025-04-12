@@ -1,0 +1,83 @@
+<footer class="footer">
+  <div class="footer-wave"></div>
+
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a routerLink="/" class="logo">
+          <img src="assets/images/logo.png" alt="SockMyBody Logo">
+          <span>SockMyBody</span>
+        </a>
+        <p class="tagline">Express yourself from the ground up</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><fa-icon [icon]="faFacebook"></fa-icon></a>
+          <a href="#" aria-label="Instagram"><fa-icon [icon]="faInstagram"></fa-icon></a>
+          <a href="#" aria-label="Twitter"><fa-icon [icon]="faTwitter"></fa-icon></a>
+          <a href="#" aria-label="Pinterest"><fa-icon [icon]="faPinterest"></fa-icon></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a routerLink="/products">All Products</a></li>
+            <li><a routerLink="/products/category/casual">Casual</a></li>
+            <li><a routerLink="/products/category/athletic">Athletic</a></li>
+            <li><a routerLink="/products/category/statement">Statement</a></li>
+            <li><a routerLink="/products/category/limited">Limited Edition</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a routerLink="/about">About Us</a></li>
+            <li><a routerLink="/careers">Careers</a></li>
+            <li><a routerLink="/sustainability">Sustainability</a></li>
+            <li><a routerLink="/wholesale">Wholesale</a></li>
+            <li><a routerLink="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Customer Care</h3>
+          <ul>
+            <li><a routerLink="/contact">Contact Us</a></li>
+            <li><a routerLink="/faq">FAQs</a></li>
+            <li><a routerLink="/shipping">Shipping & Returns</a></li>
+            <li><a routerLink="/size-guide">Size Guide</a></li>
+            <li><a routerLink="/track-order">Track Order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a routerLink="/terms">Terms of Service</a></li>
+            <li><a routerLink="/privacy">Privacy Policy</a></li>
+            <li><a routerLink="/accessibility">Accessibility</a></li>
+            <li><a routerLink="/cookies">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="payment-options">
+        <span>Payment Options:</span>
+        <div class="payment-icons">
+          <fa-icon [icon]="faVisa" class="payment-icon"></fa-icon>
+          <fa-icon [icon]="faMastercard" class="payment-icon"></fa-icon>
+          <fa-icon [icon]="faAmex" class="payment-icon"></fa-icon>
+          <fa-icon [icon]="faPaypal" class="payment-icon"></fa-icon>
+          <fa-icon [icon]="faApplePay" class="payment-icon"></fa-icon>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; {{ currentYear }} SockMyBody. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

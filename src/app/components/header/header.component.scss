@@ -1,0 +1,215 @@
+/* src/app/components/header/header.component.scss */
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-fixed;
+  background-color: rgba($white, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+
+  &.scrolled {
+    box-shadow: $shadow-md;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-sm $spacing-md;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      img {
+        height: 40px;
+        width: auto;
+        margin-right: $spacing-xs;
+      }
+
+      span {
+        font-size: 1.4rem;
+        font-weight: $font-weight-bold;
+        background: $primary-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .nav-menu {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 $spacing-md;
+
+        a {
+          color: $dark;
+          font-weight: $font-weight-medium;
+          text-decoration: none;
+          position: relative;
+          padding: $spacing-xs 0;
+          transition: $transition-base;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $primary-gradient;
+            transition: $transition-base;
+          }
+
+          &:hover,
+          &.active {
+            color: $primary;
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+
+    .action-btn {
+      background: none;
+      border: none;
+      position: relative;
+      margin-left: $spacing-sm;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition-base;
+      color: $dark;
+
+      &:hover {
+        background: rgba($primary, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        background: $primary-gradient;
+        color: $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    margin-left: $spacing-md;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: $dark;
+      transition: $transition-base;
+      transform-origin: left center;
+    }
+
+    &.active {
+      span {
+        &:first-child {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding: $spacing-md;
+      background: rgba($white, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: $shadow-md;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-base;
+      border-top: 1px solid rgba($primary, 0.1);
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      ul {
+        flex-direction: column;
+
+        li {
+          margin: $spacing-sm 0;
+
+          a {
+            display: block;
+            padding: $spacing-sm 0;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+}

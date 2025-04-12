@@ -1,0 +1,42 @@
+<div class="product-card" [class.animate-on-scroll]="animateOnScroll">
+  <div class="product-image">
+    <img [src]="product.imageUrl" [alt]="product.name">
+    <div class="product-badge" *ngIf="product.badge">{{ product.badge }}</div>
+    <div class="quick-actions">
+      <button class="action-btn wishlist-btn" aria-label="Add to wishlist">
+        <i class="icon">❤️</i>
+      </button>
+      <button class="action-btn quick-view-btn" (click)="openQuickView($event)" aria-label="Quick view">
+        <i class="icon">👁️</i>
+      </button>
+      <button class="action-btn add-to-cart-btn" (click)="addToCart($event)" aria-label="Add to cart">
+        <i class="icon">🛒</i>
+      </button>
+    </div>
+  </div>
+  <div class="product-content">
+    <div class="product-category">{{ product.category }}</div>
+    <h3 class="product-title">
+      <a [routerLink]="['/products', product.id]">{{ product.name }}</a>
+    </h3>
+    <div class="product-rating" *ngIf="product.rating">
+      <div class="stars" [attr.data-rating]="product.rating">
+        <span *ngFor="let star of stars">★</span>
+      </div>
+      <span class="rating-count" *ngIf="product.reviewCount">({{ product.reviewCount }})</span>
+    </div>
+    <div class="product-price">
+      <span class="original-price" *ngIf="product.originalPrice && product.originalPrice > product.price">${{ product.originalPrice.toFixed(2) }}</span>
+      <span class="current-price">${{ product.price.toFixed(2) }}</span>
+    </div>
+    <div class="product-colors" *ngIf="product.colors && product.colors.length">
+      <span class="color-option"
+            *ngFor="let color of product.colors"
+            [style.background-color]="color.code"
+            [attr.aria-label]="color.name"></span>
+    </div>
+  </div>
+  <div class="hover-reveal">
+    <div class="shine-effect"></div>
+  </div>
+</div>

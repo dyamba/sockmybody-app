@@ -1,0 +1,353 @@
+@import 'variables';
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Button styles
+@mixin button-base {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+// Card styles
+@mixin card-base {
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: $white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+// Modern Card Styling
+@mixin chic-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  transition: $transition-bounce;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-md;
+  }
+}
+
+// Elegant Section Heading
+@mixin section-heading {
+  margin-bottom: $spacing-xl;
+  text-align: center;
+
+  .tag {
+    display: inline-block;
+    background: $primary-gradient;
+    color: $white;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-pill;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: $spacing-sm;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+    background: linear-gradient(90deg, $dark, $gray);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .accent-line {
+    width: 80px;
+    height: 4px;
+    background: $primary-gradient;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $primary;
+      top: -2px;
+    }
+
+    &::before {
+      left: -4px;
+    }
+
+    &::after {
+      right: -4px;
+      background: $secondary;
+    }
+  }
+}
+
+// Wave Section Dividers
+@mixin wave-divider-top {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 5;
+  }
+}
+
+@mixin wave-divider-bottom {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+    z-index: 5;
+  }
+}
+
+// Button Styling
+@mixin chic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  background: $primary-gradient;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-pill;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  transition: $transition-base;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba($primary, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba($primary, 0.4);
+
+    &::after {
+      transform: scaleX(1.5) translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    transition: transform 0.6s ease;
+  }
+}
+
+// Fade-in Animation
+@mixin fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+
+  &.animated {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+}
+
+// Animated Circle Backgrounds
+@mixin animated-bg-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba($primary, 0.1), rgba($secondary, 0.1));
+
+    &:nth-child(1) {
+      width: 500px;
+      height: 500px;
+      top: -250px;
+      left: -100px;
+      animation: float-circle 15s infinite alternate;
+    }
+
+    &:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: -100px;
+      right: 10%;
+      animation: float-circle 12s infinite alternate-reverse;
+    }
+
+    &:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      top: 30%;
+      right: -50px;
+      animation: float-circle 10s infinite alternate;
+    }
+  }
+}
+
+// Feature Icon
+@mixin feature-icon($color1: $primary, $color2: $secondary) {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $white;
+  background: linear-gradient(135deg, $color1, $color2);
+  margin: 0 auto $spacing-md;
+  transition: $transition-base;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-size: 1.75rem;
+}
+
+// Product Card
+@mixin product-card {
+  @include chic-card;
+  text-align: center;
+
+  .product-image {
+    overflow: hidden;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-md;
+
+    img {
+      width: 100%;
+      transition: $transition-base;
+      transform: scale(1);
+    }
+  }
+
+  &:hover {
+    .product-image img {
+      transform: scale(1.05);
+    }
+  }
+
+  .product-title {
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-xs;
+    color: $dark;
+  }
+
+  .product-price {
+    color: $primary;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    font-size: $font-size-lg;
+  }
+}
+
+// Animation Keyframes
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-circle {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, 30px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

@@ -1,0 +1,44 @@
+<section class="gallery">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Gallery</span>
+      <h2>Our Collection Highlights</h2>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="gallery-filter">
+      <button
+        *ngFor="let filter of filters"
+        [class.active]="currentFilter === filter.value"
+        (click)="setFilter(filter.value)">
+        {{ filter.label }}
+      </button>
+    </div>
+
+    <div class="gallery-grid">
+      <div
+        *ngFor="let item of filteredItems"
+        class="gallery-item animate-on-scroll"
+        [ngClass]="item.size">
+        <div class="gallery-image">
+          <img [src]="item.image" [alt]="item.title">
+          <div class="overlay">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.category }}</p>
+            <a href="#" class="view-btn">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-cta">
+      <a routerLink="/products" class="btn">View All Collection</a>
+    </div>
+  </div>
+
+  <div class="accent-circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</section>

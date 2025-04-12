@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SockMyBody | Luxury Footwear Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="elegant-theme">
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">SockMyBody</div>
+                <ul class="nav-links">
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#craftsmanship">Craftsmanship</a></li>
+                    <li><a href="#heritage">Heritage</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="cta-small">
+                    <a href="#shop" class="btn btn-outline">Shop Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Exquisite Comfort. Unparalleled Elegance.</h1>
+                <p class="subtitle fade-in">Handcrafted luxury socks for the discerning individual.</p>
+                <div class="cta-group fade-in">
+                    <a href="#shop" class="btn btn-primary">Discover Collection</a>
+                    <a href="#story" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image fade-in">
+            <img src="images/hero-product.jpg" alt="Luxury sock collection">
+        </div>
+    </section>
+
+    <section id="collection" class="featured-collection">
+        <div class="container">
+            <h2 class="section-title">Signature Collection</h2>
+            <div class="collection-grid">
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/product-1.jpg" alt="Cashmere Evening Sock">
+                    </div>
+                    <h3>Cashmere Evening</h3>
+                    <p>Pure luxury for formal occasions</p>
+                    <span class="price">$95</span>
+                    <a href="#" class="btn-text">View Details</a>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/product-2.jpg" alt="Merino Comfort Sock">
+                    </div>
+                    <h3>Merino Comfort</h3>
+                    <p>All-day luxury for the distinguished</p>
+                    <span class="price">$85</span>
+                    <a href="#" class="btn-text">View Details</a>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/product-3.jpg" alt="Silk Infused Sock">
+                    </div>
+                    <h3>Silk Infused</h3>
+                    <p>The epitome of refined taste</p>
+                    <span class="price">$110</span>
+                    <a href="#" class="btn-text">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="craftsmanship" class="craftsmanship">
+        <div class="container">
+            <div class="split-content">
+                <div class="copy reveal">
+                    <h2>Crafted with Precision</h2>
+                    <p>Each pair of SockMyBody is meticulously crafted by master artisans with decades of experience. We utilize traditional techniques alongside cutting-edge technology to deliver unparalleled comfort and durability.</p>
+                    <p>Our commitment to excellence means selecting only the finest materials sourced from sustainable producers worldwide.</p>
+                    <a href="#process" class="btn btn-secondary">Discover Our Process</a>
+                </div>
+                <div class="image reveal">
+                    <img src="images/craftsmanship.jpg" alt="Artisan crafting luxury socks">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Clientele Experiences</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="quote">"These are beyond comparison. The comfort and elegance have made these an essential part of my wardrobe."</p>
+                    <p class="client">— Jonathan Pierce, CEO</p>
+                </div>
+                <div class="testimonial">
+                    <p class="quote">"SockMyBody represents luxury in its truest form. Impeccable quality that stands the test of time."</p>
+                    <p class="client">— Victoria Reynolds, Fashion Director</p>
+                </div>
+                <div class="testimonial">
+                    <p class="quote">"A perfect blend of tradition and innovation. Truly the finest socks I have ever worn."</p>
+                    <p class="client">— Michael Thomson, Entrepreneur</p>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="heritage" class="heritage">
+        <div class="container">
+            <div class="split-content reverse">
+                <div class="copy reveal">
+                    <h2>A Legacy of Excellence</h2>
+                    <p>Since 1892, SockMyBody has represented the pinnacle of hosiery craftsmanship. Our heritage is rooted in the pursuit of perfection through three generations of artisanal expertise.</p>
+                    <p>Every pair carries with it our commitment to quality that has earned us the trust of discerning clients worldwide.</p>
+                    <a href="#heritage" class="btn btn-secondary">Explore Our Heritage</a>
+                </div>
+                <div class="image reveal">
+                    <img src="images/heritage.jpg" alt="SockMyBody heritage image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Personalized Consultation</h2>
+            <p class="subtitle">Schedule a private consultation with our specialists</p>
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Request Consultation</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="newsletter" style="background-image: url('images/newsletter-background.jpg');">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="section-title">Join Our Exclusive Circle</h2>
+                <p class="subtitle">Subscribe for early access to limited collections and private events</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <p class="form-note">By subscribing, you agree to our Privacy Policy and consent to receive our occasional correspondence.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">SockMyBody</div>
+                    <p>Luxury redefined for the modern connoisseur.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h3>Collections</h3>
+                        <ul>
+                            <li><a href="#">Premium Line</a></li>
+                            <li><a href="#">Seasonal</a></li>
+                            <li><a href="#">Limited Edition</a></li>
+                            <li><a href="#">Bespoke</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Craftsmanship</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                            <li><a href="#">Care Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SockMyBody. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

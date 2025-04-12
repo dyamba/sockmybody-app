@@ -1,0 +1,142 @@
+<div class="checkout-container">
+  <h1>Checkout</h1>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="checkout-sections">
+      <div class="billing-details">
+        <h2>Billing Details</h2>
+        <div formGroupName="billingDetails">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input id="firstName" type="text" formControlName="firstName">
+              <div class="error" *ngIf="checkoutForm.get('billingDetails.firstName')?.touched &&
+                                      checkoutForm.get('billingDetails.firstName')?.invalid">
+                First Name is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" type="text" formControlName="lastName">
+              <div class="error" *ngIf="checkoutForm.get('billingDetails.lastName')?.touched &&
+                                      checkoutForm.get('billingDetails.lastName')?.invalid">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <div class="error" *ngIf="checkoutForm.get('billingDetails.email')?.touched &&
+                                    checkoutForm.get('billingDetails.email')?.invalid">
+              Please enter a valid email
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" formControlName="phone">
+            <div class="error" *ngIf="checkoutForm.get('billingDetails.phone')?.touched &&
+                                    checkoutForm.get('billingDetails.phone')?.invalid">
+              Phone number is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" type="text" formControlName="address">
+            <div class="error" *ngIf="checkoutForm.get('billingDetails.address')?.touched &&
+                                    checkoutForm.get('billingDetails.address')?.invalid">
+              Address is required
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input id="city" type="text" formControlName="city">
+              <div class="error" *ngIf="checkoutForm.get('billingDetails.city')?.touched &&
+                                      checkoutForm.get('billingDetails.city')?.invalid">
+                City is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="state">State</label>
+              <input id="state" type="text" formControlName="state">
+              <div class="error" *ngIf="checkoutForm.get('billingDetails.state')?.touched &&
+                                      checkoutForm.get('billingDetails.state')?.invalid">
+                State is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="zipCode">Zip Code</label>
+              <input id="zipCode" type="text" formControlName="zipCode">
+              <div class="error" *ngIf="checkoutForm.get('billingDetails.zipCode')?.touched &&
+                                      checkoutForm.get('billingDetails.zipCode')?.invalid">
+                Zip Code is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-details">
+        <h2>Payment Details</h2>
+        <div formGroupName="paymentDetails">
+          <div class="form-group">
+            <label for="cardName">Name on Card</label>
+            <input id="cardName" type="text" formControlName="cardName">
+            <div class="error" *ngIf="checkoutForm.get('paymentDetails.cardName')?.touched &&
+                                    checkoutForm.get('paymentDetails.cardName')?.invalid">
+              Name on card is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input id="cardNumber" type="text" formControlName="cardNumber">
+            <div class="error" *ngIf="checkoutForm.get('paymentDetails.cardNumber')?.touched &&
+                                    checkoutForm.get('paymentDetails.cardNumber')?.invalid">
+              Please enter a valid 16-digit card number
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="expiryDate">Expiry Date (MM/YY)</label>
+              <input id="expiryDate" type="text" formControlName="expiryDate">
+              <div class="error" *ngIf="checkoutForm.get('paymentDetails.expiryDate')?.touched &&
+                                      checkoutForm.get('paymentDetails.expiryDate')?.invalid">
+                Please enter a valid expiry date (MM/YY)
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input id="cvv" type="text" formControlName="cvv">
+              <div class="error" *ngIf="checkoutForm.get('paymentDetails.cvv')?.touched &&
+                                      checkoutForm.get('paymentDetails.cvv')?.invalid">
+                Please enter a valid CVV
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <!-- Order summary content would go here -->
+      <div class="total">
+        <span>Total:</span>
+        <span>$22.97</span>
+      </div>
+    </div>
+
+    <button type="submit" class="place-order-button">Place Order</button>
+  </form>
+</div>

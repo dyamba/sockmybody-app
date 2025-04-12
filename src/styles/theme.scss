@@ -1,0 +1,3 @@
+@use '../../../styles/theme' as theme;
+
+background: linear-gradient(135deg, theme.$clr-bg 0%, theme.$clr-light-bg 100%);

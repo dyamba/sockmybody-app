@@ -1,0 +1,33 @@
+<div class="orders-container">
+  <h1>My Orders</h1>
+
+  <div class="order-list">
+    <div class="order-card" *ngFor="let order of orders">
+      <div class="order-header">
+        <div>
+          <h3>Order #{{ order.id }}</h3>
+          <p>Placed on {{ order.date }}</p>
+        </div>
+        <div class="order-status" [ngClass]="{'delivered': order.status === 'Delivered', 'processing': order.status === 'Processing'}">
+          {{ order.status }}
+        </div>
+      </div>
+
+      <div class="order-items">
+        <div class="item" *ngFor="let item of order.items">
+          <p class="item-name">{{ item.name }} x{{ item.quantity }}</p>
+          <p class="item-price">${{ (item.price * item.quantity).toFixed(2) }}</p>
+        </div>
+      </div>
+
+      <div class="order-footer">
+        <span>Total: ${{ order.total.toFixed(2) }}</span>
+        <button class="view-details-button">View Details</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-orders" *ngIf="orders.length === 0">
+    <p>You haven't placed any orders yet.</p>
+  </div>
+</div>
